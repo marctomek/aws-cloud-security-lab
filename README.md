@@ -2,7 +2,7 @@
 
 Hands-on projects documenting my transition into cloud security, built in a dedicated AWS free-tier account. Each project follows the same pattern: **deploy → misconfigure/attack → detect → remediate → document.**
 
-**Background:** Former [DoD/military — edit this] with a security foundation, currently building AWS-specific hands-on experience alongside AWS Cloud Practitioner and Solutions Architect Associate certifications.
+**Background:** SOC Analyst with a Security+ foundation, building hands-on AWS experience toward Cloud Security Analyst/Engineer roles. This repo documents that transition.
 
 ## Projects
 
