@@ -1,0 +1,7 @@
+# Never commit credentials or account-specific identifiers
+.env
+*.pem
+credentials.csv
+**/terraform.tfstate
+**/terraform.tfstate.backup
+.DS_Store
