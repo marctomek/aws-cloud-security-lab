@@ -1,38 +1,18 @@
-# [Project Name] — e.g. "IAM Least Privilege"
+# GuardDuty Threat Detection
 
-## Objective
-One or two sentences: what real-world problem does this project demonstrate?
-> Example: "Overly permissive IAM policies are one of the most common causes of real cloud breaches. This project shows identifying an over-privileged role and scoping it down to least privilege."
+## Status: Blocked — pending AWS Support resolution
 
-## Scenario
-Set up the situation like you're briefing someone. What did you build, and what problem did you intentionally introduce?
-> Example: "I created an IAM role with `AdministratorAccess` attached to an EC2 instance profile — a common but risky shortcut — then rebuilt it with a scoped policy granting only the permissions the application actually needed."
+## What happened
+Amazon GuardDuty (and separately, AWS Security Hub) has been inaccessible on this AWS account since setup, redirecting to an "incomplete signup" page rather than the service console. All other services used in this lab (IAM, EC2, S3, CloudTrail, IAM Access Analyzer) work normally on the same account.
 
-## Steps taken
-Numbered, specific, technical. This is the proof-of-work section.
-1. ...
-2. ...
-3. ...
-
-Include actual commands, console paths, or policy JSON where relevant (redact account IDs/ARNs).
-
-## Findings / What broke
-What did you discover? What went wrong before the fix? Screenshots go here.
-- `screenshots/before.png`
-- `screenshots/finding.png`
-
-## Remediation
-What did you change, and why does it fix the underlying problem (not just this one instance of it)?
-
-## Before / After
-```
-BEFORE: [policy or config snippet]
-AFTER:  [policy or config snippet]
-```
+## Troubleshooting steps taken
+1. Confirmed the issue was specific to security/threat-detection services, not account-wide, by successfully accessing CloudTrail and other services in parallel.
+2. Filed an AWS Support case. The first response incorrectly stated GuardDuty requires a "paid plan upgrade" — this is inaccurate, since all AWS accounts are pay-as-you-go by default and GuardDuty includes a built-in 30-day free trial with no separate plan required.
+3. Replied to the support case with a corrected explanation and requested further investigation into a possible account-level restriction on this category of service.
+4. As of this writing, the issue remains unresolved and the case is open.
 
 ## What this demonstrates
-1-2 sentences connecting this back to a real job skill.
-> Example: "This mirrors the least-privilege review work expected in cloud security analyst roles — identifying scope creep in IAM and tightening it without breaking functionality."
+Real environments have real blockers — accounts get flagged, tools don't work as documented, and support responses aren't always accurate on the first pass. This log reflects the actual troubleshooting and escalation process, rather than a scripted, always-smooth lab exercise. See Project 05 for how the underlying learning objective (automated threat/misconfiguration detection) was still achieved via IAM Access Analyzer once Security Hub proved similarly blocked.
 
-## Cleanup
-Note that resources were torn down after the project (shows cost awareness and good lab hygiene).
+## Next steps
+If/when AWS Support resolves the access issue, this project will be completed as originally planned: enabling GuardDuty, generating sample findings, and documenting a triage walkthrough. (shows cost awareness and good lab hygiene).
