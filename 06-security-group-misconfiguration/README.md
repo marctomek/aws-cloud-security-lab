@@ -15,8 +15,8 @@ I launched a free-tier EC2 instance behind a dedicated security group, deliberat
 6. Re-checked the inbound rules tab to confirm the rule now reflects the restricted source.
 7. Terminated the EC2 instance to avoid any ongoing cost or exposure once the demonstration was complete.
 
-- `screenshots/inbound-rule-before.png` — inbound rules showing SSH open to `0.0.0.0/0`
-- `screenshots/inbound-rule-after.png` — inbound rules showing SSH restricted to a single IP (`/32`)
+- <img width="1412" height="508" alt="inbound-rule-before" src="https://github.com/user-attachments/assets/b7a47752-748f-4742-a3d3-119bfd82ed22" /> — inbound rules showing SSH open to `0.0.0.0/0`
+- <img width="1211" height="503" alt="inbound-rule-after" src="https://github.com/user-attachments/assets/a08a8a64-66aa-4816-ace9-6ad2087d90dd" /> — inbound rules showing SSH restricted to a single IP (`/32`)
 
 ## Findings
 - **Security group:** `misconfig-demo-sg` (`sg-0d382cdc91537c0fa`), in VPC `vpc-0493fd3325d00d8a9`
